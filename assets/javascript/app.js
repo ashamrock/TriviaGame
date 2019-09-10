@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     var right = 0;
-    var time = 3;
+    var time = 101;
     var btnclk = 0;
 
 setInterval(function(){
@@ -9,21 +9,21 @@ setInterval(function(){
   $("#time").html(time);
     if (time === 0) {
     time = "done!";
-    $('p').html("all done! you answered " + right + " out of 15! Good job?");
+    $('p').html("Times up! you answered " + right + " out of 15! Good job?");
     }
 }, 1000);
 
 $("button").click(function(){
-  $(this).closest(".question").hide(1000);
+  $(this).closest(".question").hide(1200);
     btnclk++;
     right = Number(right) + Number($(this).val());
     console.log (right)
     console.log (btnclk)
-    if (btnclk === 1) {
+    if (btnclk === 15) {
     time = "done!";
     $('p').html("you finished!");
-    setTimeout(a1, 3000);
-    setTimeout(a2, 7000);
+    setTimeout(a1, 1500);
+    setTimeout(a2, 5000);
     }
     });
 
